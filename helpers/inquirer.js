@@ -1,5 +1,6 @@
 import inquirer from "inquirer";
-import color from "colors";
+import Color from 'colors'
+import { validate } from "uuid";
 
 const question = [
   {
@@ -40,10 +41,11 @@ const question = [
 ];
 
 export const menu = async () => {
+
   console.clear();
 
   console.log("==========================".green);
-  console.log("          Menu            ".green);
+  console.log("          Menu            ");
   console.log("==========================\n".green);
 
   const { option } = await inquirer.prompt(question);
@@ -55,10 +57,36 @@ export const pause = async () => {
   const questionContinue = [
     {
       type: "input",
-      name: "option",
+      name: "desc",
       message: "Press ENTER to continue".green,
     },
   ];
   console.log("\n");
+
   await inquirer.prompt(questionContinue);
+};
+
+export const readInput = async (message) => {
+
+  const question = [
+
+    {
+      type: "input",
+      name: "description",
+      message,
+
+      validate(value) {
+
+        if (value.length === 0) {
+          return "Please write todo";
+        } else {
+          return true;
+        }
+      },
+    },
+  ];
+
+  const { description } = await inquirer.prompt(question)
+
+  return description;
 };
