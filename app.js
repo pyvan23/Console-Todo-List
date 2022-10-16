@@ -11,24 +11,23 @@ const main = async () => {
     do {
 
         op = await menu();
-        
+
         switch (op) {
-            
+
             case '1':
                 //create todo
-                const desc  = await readInput('Description: ');
-                console.log(desc)
-                
+                const desc = await readInput('Description: ');
+                todos.createTodo(desc);
                 break;
 
             case '2':
                 //List todos
                 console.log(todos._listTodos)
                 break;
-        
+
         }
 
-        // if (op !== "0") await pause();
+         if (op !== "0") await pause();
 
     } while (op !== "0");
 };

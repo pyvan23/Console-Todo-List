@@ -13,9 +13,9 @@ export class Todos {
 
     }
 
-    createTodo (description = '') {
+    createTodo ( description = '' ) {
 
-        const todo = new Todo(description);
+        const todo = new Todo( description );
 
         this._listTodos[todo.id] = todo;
 

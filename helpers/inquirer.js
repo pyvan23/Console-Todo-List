@@ -42,7 +42,7 @@ const question = [
 
 export const menu = async () => {
 
-  console.clear();
+   console.clear();
 
   console.log("==========================".green);
   console.log("          Menu            ");
@@ -54,6 +54,7 @@ export const menu = async () => {
 };
 
 export const pause = async () => {
+
   const questionContinue = [
     {
       type: "input",
@@ -66,7 +67,9 @@ export const pause = async () => {
   await inquirer.prompt(questionContinue);
 };
 
-export const readInput = async (message) => {
+export const readInput = async ( message ) => {
+
+  console.clear()
 
   const question = [
 
@@ -78,6 +81,7 @@ export const readInput = async (message) => {
       validate(value) {
 
         if (value.length === 0) {
+
           return "Please write todo";
         } else {
           return true;
@@ -86,7 +90,7 @@ export const readInput = async (message) => {
     },
   ];
 
-  const { description } = await inquirer.prompt(question)
+  const { description } = await inquirer.prompt( question )
 
   return description;
 };
