@@ -25,6 +25,10 @@ const main = async () => {
                 console.log(todos._listTodos)
                 break;
 
+            case '3':
+                //list todos completed
+                
+
         }
 
          if (op !== "0") await pause();
