@@ -5,7 +5,7 @@ import { Todo } from "./todo.js";
 
 export class Todos {
 
-    _listTodos = { };
+    _listTodos = {};
 
     constructor() {
 
@@ -13,11 +13,25 @@ export class Todos {
 
     }
 
-    createTodo ( description = '' ) {
+    createTodo(description = '') {
 
-        const todo = new Todo( description );
+        const todo = new Todo(description);
 
         this._listTodos[todo.id] = todo;
+
+    }
+    deleteTodo() {
+
+        const todo = new Todo();
+
+        for (const i of _listTodos) {
+
+            if (i === todo.description) {
+                delete todo.description
+            }
+
+        }
+
 
     }
 

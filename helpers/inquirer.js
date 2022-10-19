@@ -75,7 +75,7 @@ export const readInput = async ( message ) => {
 
     {
       type: "input",
-      name: "description",
+      name: "desc",
       message,
 
       validate(value) {
@@ -93,4 +93,19 @@ export const readInput = async ( message ) => {
   const { description } = await inquirer.prompt( question )
 
   return description;
+};
+export const todosCompleted = async ( todo ) => {
+
+  console.clear()
+
+  const question = [
+
+    {
+      type: "checkbox",
+      name: "desc",
+      checked: true,
+    },
+  ];
+
+ 
 };

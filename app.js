@@ -27,7 +27,11 @@ const main = async () => {
 
             case '3':
                 //list todos completed
-                
+
+            case '6':
+                //delete todo
+                todos.deleteTodo()
+                break
 
         }
 
