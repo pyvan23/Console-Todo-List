@@ -24,7 +24,7 @@ export class Todos {
 
         const todo = new Todo();
 
-        for (const i of _listTodos) {
+        for (const i of todo.id) {
 
             if (i === todo.description) {
                 delete todo.description

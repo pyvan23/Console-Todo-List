@@ -18,9 +18,6 @@ const main = async () => {
                 //create todo
                 const desc = await readInput('Description: ');
                 todos.createTodo(desc);
-                break;
-
-            case '2':
                 //List todos
                 console.log(todos._listTodos)
                 break;
@@ -30,6 +27,7 @@ const main = async () => {
 
             case '6':
                 //delete todo
+                
                 todos.deleteTodo()
                 break
 
