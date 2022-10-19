@@ -22,7 +22,7 @@ const main = async () => {
 
             case '2':
                 //List todos
-                console.log(todos._listTodos)
+                console.log(todos.listArr)
                 break;
 
             case '3':
