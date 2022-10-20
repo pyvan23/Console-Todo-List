@@ -1,21 +1,21 @@
 import { Todo } from "./todo.js";
 
 
-
-
 export class Todos {
 
-    _listTodos = { };
+    _listTodos = {};
 
-    get listArr(){
-        const listA = [];
-        Object.keys(this._listTodos).forEach(key=>{
-            
+    get listArr() {
+
+        const listArray = [];
+        Object.keys(this._listTodos).forEach( key => {
+
             const todo = this._listTodos[key]
-            console.log(key)
-            listA.push(todo)
+            listArray.push( todo )
+
         })
-        return listA;
+
+        return listArray;
 
     }
 
@@ -25,9 +25,9 @@ export class Todos {
         this._listTodos = {};
     }
 
-    createTodo ( description = '' ) {
+    createTodo(description = '') {
 
-        const todo = new Todo( description );
+        const todo = new Todo(description);
 
         this._listTodos[todo.id] = todo;
 

@@ -1,4 +1,5 @@
 import { menu, pause, readInput } from "./helpers/inquirer.js";
+import { saveFile } from "./helpers/saveFile.js";
 import { Todos } from "./models/todos.js";
 
 console.clear();
@@ -26,13 +27,13 @@ const main = async () => {
                 break;
 
             case '3':
-                //list todos completed
-                
+            //list todos completed
+
 
         }
 
-         if (op !== "0") await pause();
-
+        if (op !== "0") await pause();
+        saveFile(todos.listArr)
     } while (op !== "0");
 };
 
