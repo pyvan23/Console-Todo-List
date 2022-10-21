@@ -1,12 +1,1 @@
-[
-  {
-    "id": "a3b78383-bf52-408b-9dfe-a961397de67b",
-    "description": "node learn",
-    "createdDate": null
-  },
-  {
-    "id": "d5a6d213-fbe6-49c7-b0b2-cda8a8183385",
-    "description": "react learn",
-    "createdDate": null
-  }
-]
+[{"id":"a3b78383-bf52-408b-9dfe-a961397de67b","description":"node learn","createdDate":null},{"id":"d5a6d213-fbe6-49c7-b0b2-cda8a8183385","description":"react learn","createdDate":null}]

@@ -33,7 +33,7 @@ const main = async () => {
         }
 
         if (op !== "0") await pause();
-        saveFile(todos.listArr)
+        // saveFile(todos.listArr)
     } while (op !== "0");
 };
 
