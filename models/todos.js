@@ -8,10 +8,10 @@ export class Todos {
     get listArr() {
 
         const listArray = [];
-        Object.keys(this._listTodos).forEach( key => {
+        Object.keys(this._listTodos).forEach(key => {
 
             const todo = this._listTodos[key]
-            listArray.push( todo )
+            listArray.push(todo)
 
         })
 
@@ -23,6 +23,17 @@ export class Todos {
     constructor() {
 
         this._listTodos = {};
+    }
+
+    loadTodosFromArray(todos = []) {
+        
+        todos.forEach(todo=>{
+            this._listTodos[todo.id] = todo;
+
+        })
+
+
+
     }
 
     createTodo(description = '') {
