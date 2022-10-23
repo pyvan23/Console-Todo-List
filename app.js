@@ -10,7 +10,7 @@ const main = async () => {
     const todos = new Todos();
 
     const todosDb = readDb()
-    if(todosDb){
+    if (todosDb) {
         //establecer todos
         todos.loadTodosFromArray(todosDb)
     }
@@ -29,7 +29,9 @@ const main = async () => {
 
             case '2':
                 //List todos
-                console.log(todos.listArr)
+                // console.log(todos.listArr)
+                todos.listTodosCompleted()
+                
 
                 break;
 
@@ -38,9 +40,10 @@ const main = async () => {
 
 
         }
-
-        if (op !== "0") await pause();
         saveFile(todos.listArr)
+
+        await pause();
+
     } while (op !== "0");
 };
 
