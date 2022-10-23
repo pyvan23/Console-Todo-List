@@ -1,4 +1,4 @@
-import { menu, pause, readInput } from "./helpers/inquirer.js";
+import { listDeleteTodos, menu, pause, readInput } from "./helpers/inquirer.js";
 import { readDb, saveFile } from "./helpers/saveFile.js";
 import { Todos } from "./models/todos.js";
 
@@ -39,6 +39,12 @@ const main = async () => {
       case "4":
         //list todos completed
         todos.listCompletedPending(false);
+        break;
+
+      case "6":
+        
+        const id = await listDeleteTodos(todos.listArr)
+        console.log({id})
         break;
     }
     saveFile(todos.listArr);

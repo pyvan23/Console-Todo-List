@@ -45,7 +45,7 @@ const question = [
 
 export const menu = async () => {
 
-   console.clear();
+  console.clear();
 
   console.log("==========================".green);
   console.log("          Menu            ");
@@ -70,7 +70,7 @@ export const pause = async () => {
   await inquirer.prompt(questionContinue);
 };
 
-export const readInput = async ( message ) => {
+export const readInput = async (message) => {
 
   console.clear()
 
@@ -93,7 +93,40 @@ export const readInput = async ( message ) => {
     },
   ];
 
-  const { description } = await inquirer.prompt( question )
+  const { description } = await inquirer.prompt(question)
 
   return description;
 };
+
+export const listDeleteTodos = async (todos = []) => {
+
+  const choices = todos.map((todo, i) => {
+    const index = i + 1
+    return {
+
+      value: todo.id,
+      name: `${index} ${todo.description}`
+    }
+
+  })
+    const question = [
+      {
+        type:'list',
+        name:'id',
+        message:'delete',
+         choices
+      }
+    ]
+
+  const { id } = await inquirer.prompt(question);
+  return id
+  
+
+
+  // {
+  //   value: "1",
+  //   name: `${'1.'.green} Create todo`,
+  // }
+
+
+}
