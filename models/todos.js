@@ -61,8 +61,10 @@ export class Todos {
     console.log();
     let index = 0;
     this.listArr.forEach((todo) => {
+
       const { description, createdDate } = todo;
       const state = createdDate === null ? "pending".red :  "completed".green
+
       if (completed) {
         ///show completed
         if (createdDate) {
@@ -74,6 +76,7 @@ export class Todos {
           );
         }
       } else {
+        //show pending
         if (!createdDate) {
           index += 1;
           console.log(`${index.toString().green} ${description} ${state}`);
