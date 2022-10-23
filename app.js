@@ -31,13 +31,18 @@ const main = async () => {
                 //List todos
                 // console.log(todos.listArr)
                 todos.listTodosCompleted()
-                
+
 
                 break;
 
             case '3':
-            //list todos completed
-
+                //list todos completed
+                todos.listCompletedPending()
+                break
+            case '4':
+                //list todos completed
+                todos.listCompletedPending(false)
+            break
 
         }
         saveFile(todos.listArr)
