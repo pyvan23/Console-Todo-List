@@ -43,11 +43,11 @@ const main = async () => {
       case "5":
         //list todos completed
         const ids = await checkList(todos.listArr)
-        console.log(ids)
+        todos.toggleCompleted(ids)
         break;
 
       case "6":
-        console.log()
+        
 
         const id = await listDeleteTodos(todos.listArr)
 

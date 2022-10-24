@@ -91,4 +91,14 @@ export class Todos {
             }
         });
     }
+
+    toggleCompleted(ids = []) {
+        ids.forEach(id => {
+            const todo = this._listTodos[id]
+          
+            if (!todo.createdDate) {
+                todo.createdDate = new Date().toISOString()
+            }
+        })
+    }
 }

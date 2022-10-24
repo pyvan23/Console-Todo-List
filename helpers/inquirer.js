@@ -170,7 +170,7 @@ export const checkList = async (todos = []) => {
   ]
 
   const { ids } = await inquirer.prompt(question);
-  return id
+  return ids
 
 
 
