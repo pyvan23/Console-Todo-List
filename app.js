@@ -1,4 +1,4 @@
-import { listDeleteTodos, menu, pause, readInput } from "./helpers/inquirer.js";
+import { checkList, confirm, listDeleteTodos, menu, pause, readInput } from "./helpers/inquirer.js";
 import { readDb, saveFile } from "./helpers/saveFile.js";
 import { Todos } from "./models/todos.js";
 
@@ -40,11 +40,28 @@ const main = async () => {
         //list todos completed
         todos.listCompletedPending(false);
         break;
+      case "5":
+        //list todos completed
+        const ids = await checkList(todos.listArr)
+        console.log(ids)
+        break;
 
       case "6":
-        
+        console.log()
+
         const id = await listDeleteTodos(todos.listArr)
-        console.log({id})
+
+        if (id !== '0') {
+
+          const ok = await confirm('Are you sure to delete this todo?')
+
+          console.log()
+          if (ok) {
+            todos.deleteTodo(id)
+            console.log()
+            console.log('Todo deleted succesfully')
+          }
+        }
         break;
     }
     saveFile(todos.listArr);

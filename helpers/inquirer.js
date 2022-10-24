@@ -9,7 +9,7 @@ const question = [
   {
     type: "list",
     name: "option",
-    message: "what do you want to do?",
+    message: "what do you want to do?\n",
     choices: [
       {
         value: "1",
@@ -109,18 +109,69 @@ export const listDeleteTodos = async (todos = []) => {
     }
 
   })
-    const question = [
-      {
-        type:'list',
-        name:'id',
-        message:'delete',
-         choices
-      }
-    ]
+  choices.unshift({
+    value: '0', name: '0' + ' ' + 'Cancel'.red
+  })
+  const question = [
+    {
+      type: 'list',
+      name: 'id',
+      message: 'choose todo to delete\n',
+      choices
+    }
+  ]
 
   const { id } = await inquirer.prompt(question);
   return id
-  
+
+
+
+  // {
+  //   value: "1",
+  //   name: `${'1.'.green} Create todo`,
+  // }
+
+
+}
+export const confirm = async (message) => {
+
+  const question = [
+    {
+      type: 'confirm',
+      name: 'ok',
+      message,
+
+    }
+  ]
+  const { ok } = await inquirer.prompt(question);
+  return ok
+
+}
+export const checkList = async (todos = []) => {
+
+  const choices = todos.map((todo, i) => {
+    const index = i + 1
+    return {
+
+      value: todo.id,
+      name: `${index} ${todo.description}`,
+      checked: (todo.createdDate) ? true : false
+    }
+
+  })
+ 
+  const question = [
+    {
+      type: 'checkbox',
+      name: 'ids',
+      message: 'choose to check\n',
+      choices
+    }
+  ]
+
+  const { ids } = await inquirer.prompt(question);
+  return id
+
 
 
   // {
